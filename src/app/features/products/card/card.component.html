@@ -1,0 +1,32 @@
+<div
+      class="p-4 mt-2 mb-6 overflow-hidden rounded-b-lg shadow-none hover:shadow-xl"
+    >
+      <a
+        class="relative block h-48 overflow-hidden rounded"
+        [routerLink]="['/products', product().id ]"
+      >
+        <img
+          class="w-full transition duration-500 transform hover:scale-105"
+          [src]="product().image"
+          [alt]="product().title"
+
+        />
+      </a>
+
+      <div class="mt-4">
+        <h3 class="mb-1 text-xs tracking-widest text-gray-500 title-font">{{ product().category }}</h3>
+        <h2 class="py-4 text-lg font-medium text-gray-900 title-font">
+          <a [routerLink]="['/products', product().id ]"
+          >{{ product().title }}</a>
+        </h2>
+        <div class="flex items-center justify-between mt-1">
+          <p class="text-2xl font-bold text-blue-500">{{ product().price }}€</p>
+          <button
+            (click)="onAddToCart( )"
+            class="px-2 py-1 text-white bg-blue-500 rounded hover:bg-blue-700"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
